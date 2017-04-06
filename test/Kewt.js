@@ -7,7 +7,7 @@ test.afterEach(() => {
 
 test('instantiates with default values', t => {
   t.plan(1);
-  t.is(Kewt.get('font'), 'monospace');
+  t.is(Kewt.get('font'), 'monospaced-serif');
 });
 
 test('throws and does not set a state value if property is not supported', t => {
@@ -21,21 +21,21 @@ test('throws and does not set a state value if property is not supported', t => 
 
 test('sets a state value if value is an acceptable state', t => {
   t.plan(1);
-  Kewt.set('font', 'serif');
-  t.is(Kewt.get('font'), 'serif');
+  Kewt.set('font', 'proportional-serif');
+  t.is(Kewt.get('font'), 'proportional-serif');
 });
 
 test('throws and does not set a state value if value is not an acceptable state', t => {
   t.plan(4);
-  t.throws(
+  t.notThrows(
     () => (Kewt.set('font', 'helvetica')),
     'helvetica is not an accepted value for font'
   );
-  t.throws(
+  t.notThrows(
     () => (Kewt.set('edgeOpacity', '101')),
     '101 is not an accepted value for edgeOpacity'
   );
-  t.is(Kewt.get('font'), 'monospace');
+  t.is(Kewt.get('font'), 'monospaced-serif');
   t.is(Kewt.get('edgeOpacity'), '0');
 });
 
@@ -74,7 +74,7 @@ test('sets opacity states', t => {
 test('gets entire store when get is called without parameters', t => {
   t.plan(1);
   t.deepEqual(Kewt.get(), {
-    font: 'monospace',
+    font: 'monospaced-serif',
     fontSize: '3',
     fontEdge: 'none',
     edgeHighlight: 'black',
@@ -89,11 +89,11 @@ test('gets entire store when get is called without parameters', t => {
 test('sets multiple properties at once', t => {
   t.plan(2);
   t.deepEqual(Kewt.set({
-    font: 'sans-serif',
+    font: 'monospaced-sans-serif',
     fontSize: '3',
     fontEdge: 'shadow',
   }), {
-    font: 'sans-serif',
+    font: 'monospaced-sans-serif',
     fontSize: '3',
     fontEdge: 'shadow',
     edgeHighlight: 'black',
@@ -104,7 +104,7 @@ test('sets multiple properties at once', t => {
     backgroundOpacity: '100',
   });
   t.deepEqual(Kewt.get(), {
-    font: 'sans-serif',
+    font: 'monospaced-sans-serif',
     fontSize: '3',
     fontEdge: 'shadow',
     edgeHighlight: 'black',

@@ -16,7 +16,7 @@ The following code loads a DOM ready interface that checks for existing settings
 import { KewtDOM } from 'kewt';
 
 KewtDOM
-  .set('font', 'sans-serif')
+  .set('font', 'monospaced-sans-serif')
   .set('fontSize', '4')
   .set('fontEdge', 'shadow')
   .set('edgeHighlight', 'yellow')
@@ -33,7 +33,7 @@ KewtDOM
 
 | Setting | Default | Options |
 |---|---|---|
-| `font` | `'monospace'` | `'monospace'`, `'sans-serif'`, `'serif'` |
+| `font` | `'default'` | `'default'`,`'monospaced-serif'`, `'monospaced-sans-serif'`, `'proportional-serif'`, `'proportional-sans-serif'`, `'casual'`, `'cursive'`, `'small-capitals'` |
 | `fontSize` | `'3'` | `'1'`-`'6'` |
 | `fontEdge` | `none` | `'none'`, `'uniform'`, `'raised'`, `'shadow'`, `'depressed'`|
 | `edgeHighlight` | `'black'` | `'black'`, `'blue'`, `'green'`, `'teal'`, `'red'`, `'purple'`, `'yellow'`, `'white'` |

@@ -6,7 +6,7 @@ The following code loads a DOM ready interface that checks for existing settings
 import { KewtDOM } from 'kewt';
 
 KewtDOM
-  .set('font', 'sans-serif')
+  .set('font', 'monospaced-sans-serif')
   .set('fontSize', '4')
   .set('fontEdge', 'shadow')
   .set('edgeHighlight', 'yellow')

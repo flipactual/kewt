@@ -101,9 +101,14 @@ KewtDOM.RGB_COLORS = {
 };
 
 KewtDOM.FONTS = {
-  serif: 'Times New Roman',
-  'sans-serif': 'Helvetica',
-  monospace: 'Courier',
+  default: 'Courier',
+  'proportional-serif': 'Times New Roman',
+  'monospaced-sans-serif': 'Helvetica',
+  'monospaced-serif': 'Courier',
+  'proportional-sans-serif': 'Arial',
+  casual: 'Impress',
+  cursive: 'Coronet',
+  'small-capitals': 'Copperplate',
 };
 
 KewtDOM.FONT_SIZES = {

@@ -57,7 +57,8 @@ class Kewt {
   setProperty(property, value) {
     const valueString = value.toString();
     if (!KewtStore.isValid({ property, value })) {
-      throw new Error(`${valueString} is not an accepted value for ${property}`);
+      console.log(`Warning: ${valueString} is not an accepted value for ${property}`);
+      return this;
     }
     KewtStore.active[property] = valueString;
     return this;

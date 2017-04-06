@@ -1,6 +1,6 @@
 {
   "name": "kewt",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "interfaces for setting, fetching, persisting, and rendering text track styling",
   "repository": "flipactual/kewt",
   "license": "MIT",
