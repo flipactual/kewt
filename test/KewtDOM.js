@@ -62,6 +62,13 @@ test('updates ::cue CSS', t => {
   t.is(cssRules.style.backgroundColor, 'rgba(128,0,128,1)');
 });
 
+test('overrides rule name', t => {
+  t.plan(1);
+  KewtDOM
+    .setRuleName('.caption');
+  t.is(KewtDOM.ruleName, '.caption');
+});
+
 test('persists state to localStorage', t => {
   t.plan(1);
   KewtDOM

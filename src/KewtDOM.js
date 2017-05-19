@@ -28,9 +28,16 @@ class KewtDOM extends Kewt {
     if (persistedState) {
       super.set(JSON.parse(persistedState));
     }
+    this.ruleName = '::cue';
   }
+  /**
+   * setRuleName - sets the name of the CSS rule to which kewt's styles should be applied
+   *
+   * @param {string} ruleName overrides for default options
+   */
   setRuleName(ruleName) {
     this.ruleName = ruleName;
+    return this;
   }
   /**
    * reset - resets all caption properties to their default values and clears persisted state
@@ -53,7 +60,7 @@ class KewtDOM extends Kewt {
       this.node.appendChild(document.createTextNode(''));
       document.head.appendChild(this.node);
       this.sheet = this.node.sheet;
-      this.sheet.insertRule(`${this.ruleName || '::cue'} {}`, 0);
+      this.sheet.insertRule(`${this.ruleName} {}`, 0);
     }
     const {
       font,
@@ -101,9 +108,14 @@ KewtDOM.RGB_COLORS = {
 };
 
 KewtDOM.FONTS = {
-  serif: 'Times New Roman',
-  'sans-serif': 'Helvetica',
-  monospace: 'Courier',
+  default: 'Courier',
+  'proportional-serif': 'Times New Roman',
+  'monospaced-sans-serif': 'Helvetica',
+  'monospaced-serif': 'Courier',
+  'proportional-sans-serif': 'Arial',
+  casual: 'Impress',
+  cursive: 'Coronet',
+  'small-capitals': 'Copperplate',
 };
 
 KewtDOM.FONT_SIZES = {

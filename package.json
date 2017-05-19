@@ -1,7 +1,7 @@
 {
   "name": "kewt",
-  "version": "0.2.1",
-  "description": "interfaces for setting, fetching, persisting, and rendering text track styling",
+  "version": "1.0.0-alpha.1",
+  "description": "Interfaces for setting, fetching, persisting, and rendering text track styling",
   "repository": "flipactual/kewt",
   "license": "MIT",
   "author": {
@@ -29,20 +29,20 @@
     ]
   },
   "dependencies": {
-    "core-js": "^2.4.1"
+    "core-js": "2.4.1"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
-    "babel-cli": "^6.18.0",
-    "babel-preset-latest": "^6.16.0",
-    "codecov": "^1.0.1",
-    "emdaer": "^0.3.3",
-    "eslint": "^3.4.0",
-    "eslint-config-airbnb-base": "^5.0.3",
-    "eslint-plugin-ava": "^4.0.0",
-    "eslint-plugin-import": "^1.14.0",
-    "jsdom": "^9.5.0",
-    "lodash.defaults": "^4.2.0",
-    "nyc": "^10.0.0"
+    "ava": "0.16.0",
+    "babel-cli": "6.18.0",
+    "babel-preset-latest": "6.16.0",
+    "codecov": "1.0.1",
+    "emdaer": "0.3.3",
+    "eslint": "3.4.0",
+    "eslint-config-airbnb-base": "5.0.3",
+    "eslint-plugin-ava": "4.0.0",
+    "eslint-plugin-import": "1.14.0",
+    "jsdom": "9.5.0",
+    "lodash.defaults": "4.2.0",
+    "nyc": "10.0.0"
   }
 }
