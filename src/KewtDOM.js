@@ -29,14 +29,24 @@ class KewtDOM extends Kewt {
       super.set(JSON.parse(persistedState));
     }
     this.ruleName = '::cue';
+    this.windowName = null;
   }
   /**
    * setRuleName - sets the name of the CSS rule to which kewt's styles should be applied
    *
-   * @param {string} ruleName overrides for default options
+   * @param {string} ruleName
    */
   setRuleName(ruleName) {
     this.ruleName = ruleName;
+    return this;
+  }
+  /**
+   * setWindowName - sets the name of the CSS rule to which kewt's window styles should be applied
+   *
+   * @param {string} windowName
+   */
+  setWindowName(windowName) {
+    this.windowName = windowName;
     return this;
   }
   /**
@@ -72,6 +82,8 @@ class KewtDOM extends Kewt {
       textOpacity: fOpacity,
       backgroundColor: bColor,
       backgroundOpacity: bOpacity,
+      windowColor: wColor,
+      windowOpacity: wOpacity,
     } = this.get();
     const {
       FONTS,
@@ -83,6 +95,10 @@ class KewtDOM extends Kewt {
     this.sheet.cssRules[0].style.color = `rgba(${RGB_COLORS[fColor]},${fOpacity / 100})`;
     this.sheet.cssRules[0].style.backgroundColor = `rgba(${RGB_COLORS[bColor]},${bOpacity / 100})`;
     this.sheet.cssRules[0].style.textShadow = KewtDOM.getShadow(fontEdge, eColor, eOpacity);
+    if (this.windowName) {
+      this.sheet.insertRule(`${this.windowName} {}`, 1);
+      this.sheet.cssRules[1].style.backgroundColor = `rgba(${RGB_COLORS[wColor]},${wOpacity / 100})`;
+    }
     return this;
   }
   /**

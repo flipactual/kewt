@@ -69,6 +69,18 @@ test('overrides rule name', t => {
   t.is(KewtDOM.ruleName, '.caption');
 });
 
+test('handles window styles', t => {
+  t.plan(1);
+  KewtDOM
+    .setRuleName('.caption')
+    .setWindowName('.caption-window')
+    .set('windowColor', 'purple')
+    .set('windowOpacity', 33)
+    .render();
+  const cssRules = document.getElementsByTagName('style')[0].sheet.cssRules[1];
+  t.is(cssRules.style.backgroundColor, 'rgba(128,0,128,0.33)');
+});
+
 test('persists state to localStorage', t => {
   t.plan(1);
   KewtDOM
