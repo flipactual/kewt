@@ -71,6 +71,7 @@ class KewtDOM extends Kewt {
       document.head.appendChild(this.node);
       this.sheet = this.node.sheet;
       this.sheet.insertRule(`${this.ruleName} {}`, 0);
+      this.sheet.insertRule(`${this.windowName} {}`, 1);
     }
     const {
       font,
@@ -95,10 +96,7 @@ class KewtDOM extends Kewt {
     this.sheet.cssRules[0].style.color = `rgba(${RGB_COLORS[fColor]},${fOpacity / 100})`;
     this.sheet.cssRules[0].style.backgroundColor = `rgba(${RGB_COLORS[bColor]},${bOpacity / 100})`;
     this.sheet.cssRules[0].style.textShadow = KewtDOM.getShadow(fontEdge, eColor, eOpacity);
-    if (this.windowName) {
-      this.sheet.insertRule(`${this.windowName} {}`, 1);
-      this.sheet.cssRules[1].style.backgroundColor = `rgba(${RGB_COLORS[wColor]},${wOpacity / 100})`;
-    }
+    this.sheet.cssRules[1].style.backgroundColor = `rgba(${RGB_COLORS[wColor]},${wOpacity / 100})`;
     return this;
   }
   /**
