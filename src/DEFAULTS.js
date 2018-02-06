@@ -8,4 +8,6 @@ module.exports = {
   textOpacity: '100',
   backgroundColor: 'black',
   backgroundOpacity: '100',
+  windowColor: 'black',
+  windowOpacity: '0',
 };
