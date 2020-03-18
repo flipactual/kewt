@@ -1,4 +1,4 @@
-require('core-js/fn/object/assign');
+require('core-js/features/object/assign');
 const KewtStore = require('./KewtStore');
 const OPTIONS = require('./OPTIONS');
 const DEFAULTS = require('./DEFAULTS');
