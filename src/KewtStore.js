@@ -1,4 +1,4 @@
-require('core-js/fn/array/includes');
+require('core-js/features/array/includes');
 
 const KewtStore = {};
 
